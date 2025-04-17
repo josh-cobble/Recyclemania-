@@ -9,7 +9,8 @@ The user will be prompted with multiple choice questions (there are 20, which wi
 Note: the user will be prompted with a fun fact after they answer a question. These can act like 'hints' and can help the user answer upcoming questions. These also help the user learn about recycling.
 
 INSTRUCTIONS:
-1. When the program launches, it will show 2 buttons, one displaying "learn" and one displaying "quiz"
+1. download the src file in this repo
+2. When the program launches, it will show 2 buttons, one displaying "learn" and one displaying "quiz"
 
 Quiz:
 1. a question will display on the center on the screen, underneath it will display the choices as buttons, click the one displaying the correct answer
