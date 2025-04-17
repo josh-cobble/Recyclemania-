@@ -1,0 +1,31 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+
+
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Recyclemania-_1252276c",
+            "vmArgs": "--module-path \"C:\\Program Files\\javafx-sdk-24\\lib\" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "RecyclableItemsArrayLists",
+            "request": "launch",
+            "mainClass": "RecyclableItemsArrayLists",
+            "projectName": "Recyclemania-_1252276c",
+            "vmArgs": "--module-path \"C:\\Program Files\\javafx-sdk-24\\lib\" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics"
+        }
+    ]
+}
