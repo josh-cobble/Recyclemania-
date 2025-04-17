@@ -8,19 +8,11 @@ import javafx.scene.control.TextArea;
 
 import java.net.URL;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
-import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 import javafx.scene.layout.VBox;
-
 
 
 
@@ -100,11 +92,8 @@ public static int numberCorrect = 0;
 public static int chosenAwnser = 0;
 
 
-
-
  TestsRecycling.SimpleQuestions simpleQuestions= new TestsRecycling().new SimpleQuestions(); 
  TestsRecycling.ComplexQuestions complexQuestions= new TestsRecycling().new ComplexQuestions();
-
 
 
 
@@ -146,8 +135,6 @@ LearnVBox.setVisible(false);
   translate.play();
 
 
-
-
   // translate
   TranslateTransition translate2 = new TranslateTransition();
   translate2.setNode(GreyGrid);
@@ -158,45 +145,6 @@ LearnVBox.setVisible(false);
   translate2.setAutoReverse(true);
   translate2.play();
   
-
-
-
-
-
-  /*
-  // rotate
-  RotateTransition rotate = new RotateTransition();
-  rotate.setNode(myImage);
-  rotate.setDuration(Duration.millis(500));
-  rotate.setCycleCount(TranslateTransition.INDEFINITE);
-  rotate.setInterpolator(Interpolator.LINEAR);
-  rotate.setByAngle(360);
-  rotate.setAxis(Rotate.Z_AXIS);
-  rotate.play();
-   
-  // fade
-  FadeTransition fade = new FadeTransition();
-  fade.setNode(myImage);
-  fade.setDuration(Duration.millis(1000));
-  fade.setCycleCount(TranslateTransition.INDEFINITE);
-  fade.setInterpolator(Interpolator.LINEAR);
-  fade.setFromValue(0);
-  fade.setToValue(1);
-  fade.play();
-
-  // scale
-  ScaleTransition scale = new ScaleTransition();
-  scale.setNode(myImage);
-  scale.setDuration(Duration.millis(1000));
-  scale.setCycleCount(TranslateTransition.INDEFINITE);
-  scale.setInterpolator(Interpolator.LINEAR);
-  scale.setByX(2.0);
-  scale.setByY(2.0);
-  scale.setAutoReverse(true);
-  scale.play();
-  */
-
-
 
  } 
 
@@ -640,32 +588,6 @@ void ExitLearnPressed(ActionEvent event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void Incorrect() {
         System.out.println("INCORRRECTTTT");
         Correct.setVisible(false);
@@ -681,7 +603,7 @@ void ExitLearnPressed(ActionEvent event) {
         if (easyQuestions == true) {
             //This is an easy question
 
-
+            //This didnt work
            // String result = "";
           //  int i = 0;
            // while (i < simpleQuestions.questions[questionNumber].explanations.length) {
@@ -701,23 +623,6 @@ void ExitLearnPressed(ActionEvent event) {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
