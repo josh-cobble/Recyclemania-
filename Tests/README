@@ -13,3 +13,9 @@ the getAnswers() method returns all the possible answers of the question as an a
 
 the checkAnswer() method allows you to see if the question is correct by entering the selected 
 answer as a string and using that as a key to a treeMap to get the boolean value, which it returns
+
+additionally, each Question instance has a String[] containing explanations why some items aren't recyclable. The elements can be accessed like in the example below:
+simpleQuestions.questions[2].explanations[2]
+
+NOTE: only questions on index 1,3,5,9 on SimpleQuestions have values on their explanation[] array
+same applies with all questions on Complex question except index 6

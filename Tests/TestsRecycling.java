@@ -1,46 +1,72 @@
 import java.util.*;
 public class TestsRecycling extends RecyclableItemsArrayLists{
     
-    /* [IMPORTANT!]example for using the nested classes: 
-        TestsRecycling.SimpleQuestions simpleQuestions = new TestsRecycling().new SimpleQuestions();
-        TestsRecycling.ComplexQuestions complexQuestions = new TestsRecycling().new ComplexQuestions();
-    */
+    // [IMPORTANT!]example for using the nested classes: 
+    
+    
+   
+
     class SimpleQuestions{
         //stores all 10 questions
         Question[] questions = new Question[10];
-
-        //sets the simple true/false questions
+        
+                //sets the simple true/false questions
         SimpleQuestions(){
+            //============================================================================
+
+            //Just add these ig
+           // TestsRecycling.SimpleQuestions simpleQuestions = new TestsRecycling().new SimpleQuestions();
+           // TestsRecycling.ComplexQuestions complexQuestions = new TestsRecycling().new ComplexQuestions();
+
+            //Gets question #2 (0 index)
+            //String q = simpleQuestions.questions[1].GetQuestion();
+            //Gets all posible awnsers in question #2 (0 insex)
+            //If array a is size 2, it a simple question, else it has a size of 4
+           // String a[] = simpleQuestions.questions[1].getAnswers().clone();
+
+            //Pass it the string vlaue of the selected awnser, returns if its true of false
+            //simpleQuestions.questions[1].CheckAnswer(/*answer[String]*/);
+            //simpleQuestions.questions[5].explanations[i]
+            //================================================================================
+
+            
             //paper
             questions[0] = new Question( getList(true, 0) + " can be recycled");
             questions[0].AddAnswer("True");
             questions[1] = new Question( getList(false, 0) + " can be recycled");
             questions[1].AddAnswer("False");
+            questions[1].AddExplanations(new int[]{0,1});
 
             //cardboard
             questions[2] = new Question("A clean pizza box can't be recycled");
             questions[2].AddAnswer("True");
             questions[3] = new Question("A soggy delivery box can't be recycled");
             questions[3].AddAnswer("True");
+            questions[3].AddExplanations(new int[]{0,1});
             
             //plastic
             questions[4] = new Question("Type 1 plastics can't be recycled?");
             questions[4].AddAnswer("False");
             questions[5] = new Question("Type 4 plastics can be recycled");
             questions[5].AddAnswer("False");
+            questions[5].AddExplanations(new int[]{3});
 
             //glass
             questions[6] = new Question(getList(true, 3) + " can't be recycled");
             questions[6].AddAnswer("False");
             questions[7] = new Question(getList(false, 3) + " can't be recycled");
             questions[7].AddAnswer("true");
+            questions[7].AddExplanations(new int[]{1,2});
+
             
             //metal
             questions[8] = new Question(getList(true, 4) + " can be recycled");
             questions[8].AddAnswer("True");
             questions[9] = new Question(getList(false, 4) + " can be recycled");
             questions[9].AddAnswer("False");
+            questions[9].AddExplanations(new int[4]);
 
+            
         }//end simple questions constructor
 
     }//end simple questions class
@@ -61,6 +87,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[0].AddAnswer(getList(false, 0), false);
             questions[0].AddAnswer(getList(false, 4), false);
             questions[0].AddAnswer("None of the above", true);
+            questions[0].AddExplanations(new int[]{0,1,4});
 
             //question2
             questions[1] = new Question("Which of these have to be thrown away?");
@@ -68,6 +95,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[1].AddAnswer(customItems[0].getName(), false);
             questions[1].AddAnswer(customItems[1].getName(), false);
             questions[1].AddAnswer(getList(true, 3), false);
+            questions[1].AddExplanations(new int[]{1,2,5});;
 
             //question3
             questions[2] = new Question("Which of these can be recycled when it's clean");
@@ -75,6 +103,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[2].AddAnswer(customItems[7].getName(), false);
             questions[2].AddAnswer("Pizza Boxes", true);
             questions[2].AddAnswer(getList(false, 4, 0), false);
+            questions[2].AddExplanations(new int[]{3,4});
             
             //question4
             questions[3] = new Question("A dirty napkin can be considered as: ");
@@ -82,6 +111,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[3].AddAnswer(getList(true, 2), false);
             questions[3].AddAnswer(getList(true, 4), false);
             questions[3].AddAnswer(" Food-tainted paper products", true);
+            questions[3].AddExplanations(new int[]{0,1});
 
             //question5
             questions[4] = new Question("Which of the following can be considered non-recyclable cardboard");
@@ -89,6 +119,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[4].AddAnswer(getList(true, 0), false);
             questions[4].AddAnswer(getList(false, 3), false);
             questions[4].AddAnswer(customItems[1].getName(), false);
+            questions[4].AddExplanations(new int[]{1,5});
 
             //paper
             questions[5] = new Question("Which type of paper can be recycled?");
@@ -96,6 +127,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[5].AddAnswer(getList(false, 2), false);
             questions[5].AddAnswer(customItems[0].getName(), true);
             questions[5].AddAnswer(getList(false, 3), false);
+            questions[5].AddExplanations(new int[]{0,1,3});
 
             //cardboard
             questions[6] = new Question("Which of these cardboard materials can be recycled?");
@@ -110,6 +142,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[7].AddAnswer("Type 1 plastic", false);
             questions[7].AddAnswer("Type 4 plastic", false);
             questions[7].AddAnswer("Type 6 plastic", false);
+            questions[7].AddExplanations(new int[]{3});
 
             //glass
             questions[8] = new Question("Which type of glass can NOT be recycled?");
@@ -117,6 +150,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[8].AddAnswer(customItems[8].getName(), true);
             questions[8].AddAnswer(getList(false, 0), false);
             questions[8].AddAnswer(customItems[2].getName(), false);
+            questions[8].AddExplanations(new int[]{1,5});
 
             //metal
             questions[9] = new Question("Which of these metals can't be recycled?");
@@ -124,6 +158,7 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
             questions[9].AddAnswer(getList(false, 4), true);
             questions[9].AddAnswer(getList(true, 4), false);
             questions[9].AddAnswer(customItems[9].getName(), true);
+            questions[9].AddExplanations(new int[]{4});
         }// end complexQuestions constructor
 
         //method adds 5 recyclable and 5 nonrecyclable items into an array
