@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
+
 import java.net.URL;
 
 import javafx.animation.FadeTransition;
@@ -17,6 +19,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import javafx.scene.layout.VBox;
+
+
+
 
 public class MainSceneController implements Initializable{
 
@@ -34,6 +40,10 @@ public class MainSceneController implements Initializable{
  private Button LearnButton;
 
 
+
+
+ @FXML
+ private Label WrongFeedback;
 
  @FXML
  private Label Question;
@@ -57,6 +67,20 @@ public class MainSceneController implements Initializable{
  @FXML
  private ImageView Correct;
 
+ @FXML
+ private Button reset;
+
+ @FXML
+ private VBox LearnVBox;
+
+    @FXML
+    private TextArea AAAA;
+
+
+ 
+ @FXML
+ private Button ExitLearn;
+
 
  @FXML
  private Button FeedbackButton;
@@ -73,6 +97,9 @@ public static boolean easyQuestions = true;
 
 public static int numberCorrect = 0;
 
+public static int chosenAwnser = 0;
+
+
 
 
  TestsRecycling.SimpleQuestions simpleQuestions= new TestsRecycling().new SimpleQuestions(); 
@@ -84,19 +111,30 @@ public static int numberCorrect = 0;
  @Override
  public void initialize(URL arg0, ResourceBundle arg1) {
   
+
+WrongFeedback.setVisible(false);
   Question.setVisible(false);
 
+  reset.setVisible(false);
+  reset.setDisable(true);
 
   Q1.setVisible(false);
   Q2.setVisible(false);
   Q3.setVisible(false);
   Q4.setVisible(false);
 
+
+
+LearnVBox.setVisible(false);
+
+
   Correct.setVisible(false);
   Incorrect.setVisible(false);
 
   FeedbackButton.setDisable(true);
   FeedbackButton.setVisible(false);
+
+  AAAA.setVisible(false);
 
   // translate
   TranslateTransition translate = new TranslateTransition();
@@ -173,6 +211,8 @@ public static int numberCorrect = 0;
     LearnButton.setVisible(false);
 
 
+    WrongFeedback.setVisible(false);
+
     //Question
     Question.setVisible(true);
     Question.setText(simpleQuestions.questions[questionNumber].GetQuestion());
@@ -211,8 +251,23 @@ public static int numberCorrect = 0;
         Quiz.setVisible(false);
         LearnButton.setDisable(true);
         LearnButton.setVisible(false);
+        LearnVBox.setVisible(true);
+        AAAA.setVisible(true);
 
     }
+
+    @FXML
+void ExitLearnPressed(ActionEvent event) {
+
+    Quiz.setDisable(false);
+    Quiz.setVisible(true);
+    LearnButton.setDisable(false);
+    LearnButton.setVisible(true);
+    LearnVBox.setVisible(false);
+    AAAA.setVisible(false);
+
+    }
+
 
 
 
@@ -220,11 +275,14 @@ public static int numberCorrect = 0;
 
     @FXML
     void Q1Pressed(ActionEvent event) {
+        chosenAwnser = 1;
         //Hard questions awnser checking
         if (complexQuestions.questions[questionNumber].CheckAnswer(Q1.getText()) == true) {
 
             System.out.println("You got it right!");
             FeedbackButton.setText("That's right!");
+            WrongFeedback.setText("Great work! Thats correct!");
+            WrongFeedback.setVisible(true);
             numberCorrect = numberCorrect + 1;
             Correct.setVisible(true);
         }
@@ -243,7 +301,7 @@ public static int numberCorrect = 0;
 
     @FXML
     void Q2Pressed(ActionEvent event) {
-
+        chosenAwnser = 2;
         if (easyQuestions == true) {
             if (trueFalseQuestion == true) {
 
@@ -251,6 +309,8 @@ public static int numberCorrect = 0;
 
                     System.out.println("You got it right!");
                     FeedbackButton.setText("That's right!");
+                    WrongFeedback.setText("Great work! Thats correct!");
+                    WrongFeedback.setVisible(true);
                     Correct.setVisible(true);
                     numberCorrect = numberCorrect + 1;
                 }
@@ -270,6 +330,8 @@ public static int numberCorrect = 0;
 
                 System.out.println("You got it right!");
                 FeedbackButton.setText("That's right!");
+                WrongFeedback.setText("Great work! Thats correct!");
+                WrongFeedback.setVisible(true);
                 Correct.setVisible(true);
                 numberCorrect = numberCorrect + 1;
             }
@@ -286,7 +348,7 @@ public static int numberCorrect = 0;
 
     @FXML
     void Q3Pressed(ActionEvent event) {
-
+        chosenAwnser = 3;
 
         if (easyQuestions == true) {
             if (trueFalseQuestion == true) {
@@ -295,6 +357,8 @@ public static int numberCorrect = 0;
 
                     System.out.println("You got it right!");
                     FeedbackButton.setText("That's right!");
+                    WrongFeedback.setText("Great work! Thats correct!");
+                    WrongFeedback.setVisible(true);
                     Correct.setVisible(true);
                     numberCorrect = numberCorrect + 1;
                 }
@@ -313,6 +377,8 @@ public static int numberCorrect = 0;
 
                 System.out.println("You got it right!");
                 FeedbackButton.setText("That's right!");
+                WrongFeedback.setText("Great work! Thats correct!");
+                WrongFeedback.setVisible(true);
                 Correct.setVisible(true);
                 numberCorrect = numberCorrect + 1;
             }
@@ -330,11 +396,13 @@ public static int numberCorrect = 0;
 
     @FXML
     void Q4Pressed(ActionEvent event) {
-
+        chosenAwnser = 4;
         if (complexQuestions.questions[questionNumber].CheckAnswer(Q3.getText()) == true) {
 
             System.out.println("You got it right!");
             FeedbackButton.setText("That's right!");
+            WrongFeedback.setText("Great work! Thats correct!");
+            WrongFeedback.setVisible(true);
             Correct.setVisible(true);
             numberCorrect = numberCorrect + 1;
         }
@@ -387,6 +455,8 @@ public static int numberCorrect = 0;
     public void SetUpNextQuestion() {
 
 
+        WrongFeedback.setVisible(false);
+        WrongFeedback.setText("Great work! Thats correct!");
         FeedbackButton.setVisible(false);
         FeedbackButton.setDisable(true);
 
@@ -397,7 +467,8 @@ public static int numberCorrect = 0;
                 questionNumber = 0;
 
             } else {
-                System.out.println("end of the line");
+                EndOfLine();
+
                 return;
 
             }
@@ -479,13 +550,90 @@ public static int numberCorrect = 0;
 
 
 
-    public void Incorrect() {
+
+
+
+
+
+    public void EndOfLine() {
+
+        System.out.println("end of the line");
+        
+
+        Q1.setDisable(true);
+        Q2.setDisable(true);
+        Q3.setDisable(true);
+        Q4.setDisable(true);
+
+        Q1.setVisible(false);
+        Q2.setVisible(false);
+        Q3.setVisible(false);
+        Q4.setVisible(false);
 
         Correct.setVisible(false);
-        Incorrect.setVisible(true);
-        FeedbackButton.setText("Thats wrong :(");
+        Incorrect.setVisible(false);
+
+        WrongFeedback.setVisible(true);
+        WrongFeedback.setText("You got " +  Integer.toString(numberCorrect) + " out of 20!");
+
+        Question.setText("Congratulations!");
 
 
+        reset.setVisible(true);
+        reset.setDisable(false);
+
+
+    }
+
+
+
+
+
+
+    @FXML
+    void resetPressed(ActionEvent event) {
+
+
+    trueFalseQuestion = true;
+
+    questionNumber = 0;
+
+    easyQuestions = true;
+
+    numberCorrect = 0;
+
+    chosenAwnser = 0;
+        
+    WrongFeedback.setVisible(false);
+    Question.setVisible(false);
+
+    reset.setVisible(false);
+    reset.setDisable(true);
+
+    Q1.setVisible(false);
+    Q2.setVisible(false);
+    Q3.setVisible(false);
+    Q4.setVisible(false);
+
+
+    Q1.setDisable(false);
+    Q3.setDisable(false);
+    Q4.setDisable(false);
+    Q2.setDisable(false);
+    
+
+    Correct.setVisible(false);
+    Incorrect.setVisible(false);
+
+    FeedbackButton.setDisable(true);
+    FeedbackButton.setVisible(false);
+    
+    LearnButton.setVisible(true);
+    LearnButton.setDisable(false);
+
+
+    Quiz.setDisable(false);
+    Quiz.setVisible(true);
 
     }
 
@@ -499,6 +647,60 @@ public static int numberCorrect = 0;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void Incorrect() {
+        System.out.println("INCORRRECTTTT");
+        Correct.setVisible(false);
+        Incorrect.setVisible(true);
+        FeedbackButton.setText("Thats wrong :(");
+
+        WrongFeedback.setVisible(true);
+
+
+        //Replace with reason they're wrong
+        WrongFeedback.setText("You're wrong :(");
+
+        if (easyQuestions == true) {
+            //This is an easy question
+
+
+           // String result = "";
+          //  int i = 0;
+           // while (i < simpleQuestions.questions[questionNumber].explanations.length) {
+           //     result = result + simpleQuestions.questions[questionNumber].explanations[i];
+           //     i++;
+           // }              NO idea what the propper way to do this is. I dont understand the format given. 
+        
+
+             //WrongFeedback.setText(result);
+
+
+        } else {
+
+            //This is a complex problem
+
+        }
+
+
+    }
 
 
 
@@ -721,29 +923,6 @@ public class TestsRecycling extends RecyclableItemsArrayLists{
     }//end getList method
 
 }//end TestsRecycling class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

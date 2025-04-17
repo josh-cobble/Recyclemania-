@@ -3,9 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
@@ -56,7 +58,7 @@
             <Font name="Kristen ITC" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="FeedbackButton" disable="true" layoutX="415.0" layoutY="451.0" mnemonicParsing="false" onAction="#FeedbackButtonPressed" prefHeight="61.0" prefWidth="200.0" text="Thats right!">
+      <Button fx:id="FeedbackButton" disable="true" layoutX="415.0" layoutY="451.0" mnemonicParsing="false" onAction="#FeedbackButtonPressed" prefHeight="61.0" prefWidth="200.0" text="That's right!">
          <font>
             <Font name="Kristen ITC" size="13.0" />
          </font>
@@ -71,5 +73,27 @@
             <Image url="@../../../Downloads/Correct.png" />
          </image>
       </ImageView>
+      <Label fx:id="WrongFeedback" alignment="CENTER" layoutX="51.0" layoutY="259.0" lineSpacing="2.0" maxWidth="1.7976931348623157E308" mouseTransparent="true" prefHeight="182.0" prefWidth="928.0" text="Why you're wrong." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Kristen ITC" size="32.0" />
+         </font>
+      </Label>
+      <Button fx:id="reset" layoutX="493.0" layoutY="512.0" mnemonicParsing="false" onAction="#resetPressed" text="Reset" />
+      <VBox fx:id="LearnVBox" layoutX="18.0" layoutY="27.0" prefHeight="414.0" prefWidth="207.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Paper" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Carboard" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Glass" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Metal" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Heavy Metal" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="220.0" text="Other" />
+            <Button fx:id="ExitLearn" mnemonicParsing="false" onAction="#ExitLearnPressed" prefHeight="59.0" prefWidth="220.0" text="Exit" />
+         </children>
+      </VBox>
+      <TextArea fx:id="AAAA" layoutX="244.0" layoutY="168.0" mouseTransparent="true" prefHeight="274.0" prefWidth="731.0" text="https://www.michigan.gov/egle/public/learn/recycling         https://www.epa.gov/recycle          https://www.epa.gov/recycle/reducing-and-reusing-basics     https://www.epa.gov/recycle/how-do-i-recycle-common-recyclables" wrapText="true">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextArea>
    </children>
 </AnchorPane>
