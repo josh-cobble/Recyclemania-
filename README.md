@@ -9,7 +9,7 @@ The user will be prompted with multiple choice questions (there are 20, which wi
 Note: the user will be prompted with a fun fact after they answer a question. These can act like 'hints' and can help the user answer upcoming questions. These also help the user learn about recycling.
 
 INSTRUCTIONS:
-1. download the src file in this repo
+1. download the src file in this repo and setup JFX
 2. When the program launches, it will show 2 buttons, one displaying "learn" and one displaying "quiz"
 
 Quiz:
